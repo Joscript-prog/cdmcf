@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charte de Modération VIGI+</title>
+    <style>
+        :root {
+            --primary: #1a3a6c;
+            --secondary: #2c5282;
+            --accent: #e53e3e;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f4f8;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card h3 {
+            color: var(--secondary);
+            margin: 1.2rem 0 0.8rem;
+        }
+        
+        .section-number {
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .example-container {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-left: 4px solid var(--gray);
+            background-color: #f8fafc;
+        }
+        
+        .reject {
+            color: #e53e3e;
+            font-weight: bold;
+        }
+        
+        .accept {
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        .escalate {
+            color: #d69e2e;
+            font-weight: bold;
+        }
+        
+        .confidential {
+            background-color: #fffaf0;
+            border: 1px solid #f6ad55;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .toc {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .toc h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            columns: 2;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+            break-inside: avoid;
+        }
+        
+        .toc a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .toc a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .toc ul {
+                columns: 1;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Charte de Modération </h1>
+            <p>Document technique</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="confidential">
+       
+        </div>
+        
+        <div class="card">
+            <h2><span class="section-number">1</span> Contexte et éléments techniques</h2>
+            <p>Ce document a pour but de définir les consignes de modération, c'est-à-dire les cas où le client souhaite accepter un message et ceux où il ne le souhaite pas. Les modérateurs ont également la possibilité d'escalader certains messages au client.</p>
+            <p>Ce document se veut le plus précis possible, mais il ne peut être exhaustif. Il ne constitue qu'une aide pour le travail de modération.</p>
+            <p><strong>Note :</strong> Ci-après le terme « contenu » désigne un message publié par un utilisateur, qu'il s'agisse d'un texte, d'une image, d'une vidéo ou d'un lien hypertexte.</p>
+        </div>
+        
+        <div class="card">
+            <h2><span class="section-number">2</span> Charte de modération</h2>
+            <p>Ce chapitre décrit point par point les cas qui peuvent être rencontrés par le modérateur et les verdicts à donner. Comme il n'est pas possible de prévoir tous les cas, ce document sera amené à évoluer au fur et à mesure que de nouveaux cas seront rencontrés ou que des précisions seront utiles.</p>
+            
+            <h3>2.1 Les liens URL vers des sites extérieurs</h3>
+            <p>Les liens URL étant généralement utilisés à des fins de spam, de militantisme ou de promotion, on rejettera tous les messages comportant un lien vers un site ou vers une vidéo.</p>
+            <p><strong>Exception :</strong> accepter les liens URL pointant vers le site ou une publication FB du média où le commentaire a été posté.</p>
+            
+            <h3>2.2 Diffamation</h3>
+            <p>On considérera qu'un message est diffamatoire et donc à supprimer, si et seulement si les 4 critères suivants sont réunis :</p>
+            <ol>
+                <li>Le message est une affirmation (ou une supposition).</li>
+                <li>Une personne physique ou une entreprise précise et identifiable est mise en cause.</li>
+                <li>Les propos avancés sont faux ou invérifiables.</li>
+                <li>Les propos sont de nature à porter gravement atteinte à la réputation de la personne ou de l'entreprise.</li>
+            </ol>
+            
+            <div class="example-container">
+                <p><strong>Exemples de contenus diffamatoires à rejeter :</strong></p>
+                <ul>
+                    <li>« Paul Dupont est un escroc qui avait détourné l'argent de son parti politique. »</li>
+                    <li>« Nestlé ajoute des additifs cancérigènes dans ses produits »</li>
+                </ul>
+                
+                <p><strong>Exemples de contenus qui ne sont PAS diffamatoires :</strong></p>
+                <ul>
+                    <li>« Air France a offert une prime de fin d'année de 1000€ à ses salariés. »</li>
+                    <li>« Edouard Philippe est un incompétent »</li>
+                </ul>
+            </div>
+            
+            <h3>2.3 Propos conspirationnistes</h3>
+            <p>Les propos relayant des théories conspirationnistes sont à rejeter au motif « Autre motif » même si ceux-ci ne sont pas diffamatoires et ne visent aucune personne ou entreprise en particulier.</p>
+            <p>Sont notamment à supprimer les propos relatant des projets de domination du monde ou de manipulation des masses par des sociétés secrètes ou des corporations occultes.</p>
+            
+            <h3>2.4 Insultes</h3>
+            <p>Il faut rejeter les messages insultants envers toute personne, connue ou non, y compris envers les groupes de personnes non identifiables.</p>
+            
+            <div class="example-container">
+                <p><strong>Exemples :</strong></p>
+                <ul>
+                    <li>« Toto27, tu es vraiment un connard » : <span class="reject">REJET</span></li>
+                    <li>« Karin Keller-Sutter n'est rien d'autre qu'une salope » : <span class="reject">REJET</span></li>
+                    <li>« Danone a encore licencié 1500 personnes, quelle boîte de salauds » : <span class="reject">REJET</span></li>
+                </ul>
+            </div>
+            
+            <h3>2.5 La vulgarité</h3>
+            <p>On rejettera les messages au motif « Vulgarité » si :</p>
+            <ul>
+                <li>Elle est excessive (présence de plus de 2 termes grossiers)</li>
+                <li>Elle est utilisée pour se montrer dégradant envers une personne</li>
+                <li>L'auteur emploie des termes graveleux (sexuels) ou scatologiques</li>
+            </ul>
+            
+            <h3>2.6 Agressivité</h3>
+            <p>On considérera comme « agressif » un commentaire contenant des attaques personnelles.</p>
+            <p>On fera une différence en fonction de la cible du propos agressif :</p>
+            <ul>
+                <li>Les attaques envers d'autres utilisateurs du site, du forum, de Facebook sont à rejeter</li>
+                <li>Les propos agressifs envers une personnalité publique peuvent être acceptés, sous réserve que les propos ne soient pas grossiers ou injurieux</li>
+            </ul>
+            
+            <h3>2.7 Argumentation des critiques négatives</h3>
+            <p>Afin de conserver des échanges constructifs entre internautes, les critiques et propos négatifs dirigés contre des personnes ou des créations se doivent d'être un minimum argumentés.</p>
+            
+            <div class="example-container">
+                <p><strong>Exemples à rejeter :</strong></p>
+                <ul>
+                    <li>"Trop nul Macron"</li>
+                    <li>"Beurk"</li>
+                    <li>"Pourri ce film"</li>
+                </ul>
+                
+                <p><strong>Exemples à accepter :</strong></p>
+                <ul>
+                    <li>"Macron est nul, pire président de la Vème république"</li>
+                    <li>"Beurk la charcuterie, ce sont des bouts de cadavres"</li>
+                </ul>
+            </div>
+            
+            <h3>2.8 Contenus non conformes à la loi (illégal)</h3>
+            <p>Il faut rejeter :</p>
+            <ul>
+                <li>Les appels à la violence, à la haine, au viol, au meurtre</li>
+                <li>L'apologie de la consommation, production ou vente de drogue</li>
+            </ul>
+            
+            <h3>2.9 Révisionnisme, négationnisme, apologie de crimes contre l'humanité</h3>
+            <p>Seront rejetés :</p>
+            <ul>
+                <li>Apologie des crimes de guerre et crimes contre l'humanité</li>
+                <li>Révisionnisme : remise en cause de certains aspects de l'histoire de la Seconde Guerre mondiale</li>
+                <li>Négationnisme : la négation de la réalité du génocide pratiqué par l'Allemagne nazie</li>
+            </ul>
+            
+            <h3>2.10 Pseudonyme</h3>
+            <p>Les pseudonymes des utilisateurs sont également à modérer. Ils ne doivent pas être insultants pour le lecteur.</p>
+            
+            <h3>2.11 Propriété intellectuelle</h3>
+            <p>Comme on ne peut pas déterminer la propriété de l'auteur du message sur les textes, les images ou les vidéos, il faut les accepter par défaut tant qu'elles ne font pas l'objet d'une notification d'alerte contestant les droits d'auteurs.</p>
+            
+            <h3>2.12 Respect de la vie privée</h3>
+            <p>On rejettera les messages qui divulguent des informations personnelles d'autres utilisateurs sans leur consentement.</p>
+            
+            <h3>2.13 Répétition</h3>
+            <p>On rejette tout type de harcèlement par la répétition de messages identiques ou très voisins ainsi que la répétition de liens identiques vers d'autres sites, spam promotionnel.</p>
+            
+            <h3>2.14 Critique envers le client</h3>
+            <p>On accepte les critiques envers le client si et seulement si elles répondent aux 3 critères suivants :</p>
+            <ol>
+                <li>Elles sont argumentées et expliquent pourquoi l'utilisateur est mécontent</li>
+                <li>Elles sont courtoises et ne comportent aucun terme vulgaire</li>
+                <li>Elles n'attaquent pas personnellement l'auteur ou un autre membre de la rédaction</li>
+            </ol>
+            
+            <h3>2.15 Attaques envers les journalistes et médias</h3>
+            <p>Il est autorisé de critiquer les journalistes en général et les médias autres que Centre-France, sauf si le message affirme que : les médias sont corrompus, mentent, truquent les informations, sont à la solde du gouvernement ou de lobbies.</p>
+            
+            <h3>2.16 Critiques envers la modération</h3>
+            <p>Les propos qui n'ont pour unique objet que la critique ou la contestation de la modération ou des décisions prises par la modération sont à rejeter.</p>
+            
+            <h3>2.17 Point Godwin et dérives</h3>
+            <p>Les messages faisant allusion à Hitler, Staline, Mao, Pol Pot, le régime de Vichy, les champs de concentration ou qui qualifient un homme politique français de « dictateur » sont à rejeter, sauf si le sujet de l'article est strictement lié à ces thématiques.</p>
+            
+            <h3>2.18 Racisme</h3>
+            <p>Modération stricte. On rejette notamment :</p>
+            <ul>
+                <li>Le racisme, xénophobie, l'incitation à la haine raciale</li>
+                <li>Les discriminations sur les origines ethniques, le sexe ou les orientations sexuelles</li>
+                <li>Les propos antisémites, la stigmatisation envers des communautés religieuses</li>
+            </ul>
+            
+            <h3>2.19 Homophobie</h3>
+            <p>Comme précisé plus haut, les propos homophobes sont à rejeter.</p>
+            
+            <h3>2.20 Sexisme</h3>
+            <p>Les propos sexistes concernant essentiellement les femmes, seuls les propos dégradants ou infériorisants envers celles-ci seront considérés comme sexistes et donc à rejeter.</p>
+            
+            <h3>2.21 Islamophobie</h3>
+            <p>Il est autorisé de critiquer la religion musulmane mais on rejettera les commentaires qui suggèrent que la France est en train d'être « islamisée » ou « envahie par les musulmans ».</p>
+            
+            <h3>2.22 Antisémitisme</h3>
+            <p>On sera vigilant quant aux amalgames, clichés et préjugés relatifs à la communauté juive qui peuvent être véhiculés par les internautes.</p>
+            
+            <h3>2.23 Conflit israélo-palestinien</h3>
+            <p>Étant donné le caractère particulièrement passionné et complexe du sujet, tout message semblant agressif ou ne participant pas à un débat constructif et apaisé, doit être refusé.</p>
+            
+            <h3>2.24 Accueil des migrants</h3>
+            <p>On rejettera les commentaires stigmatisants de par leur côté péjoratif et généralisateur sur les migrants.</p>
+            
+            <h3>2.25 Pub, spam d'arnaque et militantisme</h3>
+            <p>On considérera comme de la « publicité » un message contenant une intention commerciale ou promotionnelle évidente.</p>
+            
+            <h3>2.26 Pédophilie</h3>
+            <p>On considérera comme « pédophiles », les propos qui :</p>
+            <ul>
+                <li>Rapportent un témoignage d'avoir eu une relation sexuelle entre un adulte et un mineur</li>
+                <li>Font l'apologie des relations sexuelles entre adultes et mineurs</li>
+                <li>Demandent la dépénalisation des relations sexuelles entre adultes et mineurs</li>
+            </ul>
+            
+            <h3>2.27 Nudité, érotisme et pornographie</h3>
+            <p>Toute photo d'un enfant ou d'un mineur dénudé et même si la situation est sans ambiguïté ni connotation sexuelle, doit être rejetée.</p>
+            
+            <h3>2.28 Blagues</h3>
+            <p>Il est autorisé de publier des commentaires humoristiques, des histoires drôles et jeux de mots dans les espaces de discussion.</p>
+            <p>On rejettera toutefois les plaisanteries ou blagues lorsqu'elles s'attaquent à :</p>
+            <ul>
+                <li>Aux religions</li>
+                <li>Les minorités ethniques et sexuelles</li>
+                <li>Les femmes</li>
+                <li>Les personnes handicapées</li>
+            </ul>
+            
+            <h3>2.29 Suicide et apologie du suicide</h3>
+            <p>On fera une distinction en fonction de si l'auteur affirme son intention de se suicider ou bien s'il fait l'apologie du suicide.</p>
+            
+            <h3>2.30 Illisible</h3>
+            <p>On rejettera tous les commentaires :</p>
+            <ul>
+                <li>Vides</li>
+                <li>Intégralement dans une autre langue que le français</li>
+                <li>Illisibles</li>
+                <li>Doublons</li>
+                <li>Rédigés en majuscules à plus de 50%</li>
+            </ul>
+            
+            <h3>2.31 Prostitution</h3>
+            <p>Il faut rejeter tous les messages de ce type, que ce soient des candidats à la prostitution, des proxénètes potentiels ou des clients potentiels.</p>
+            
+            <h3>2.32 Demande d'effacement d'un message suite à une erreur</h3>
+            <p>Si quelqu'un prétend être l'auteur d'un contenu et demande qu'il soit effacé car il dit s'être trompé en le postant : on efface le message seulement si on a un moyen fiable de contrôler que c'est bien l'auteur du message.</p>
+            
+            <h3>2.33 Manque de respect à une victime</h3>
+            <p>On classera dans la catégorie « victime » les personnes décédées ou blessées, ayant subi un viol ou un accident. On rejettera tous les commentaires qui :</p>
+            <ul>
+                <li>Se moquent de la victime</li>
+                <li>Insultent la victime</li>
+                <li>Disent « c'est bien fait pour elle »</li>
+                <li>Font de l'humour noir/macabre sur la victime</li>
+            </ul>
+            
+            <h3>2.34 Republication de textes issus d'autres sources</h3>
+            <p>La question est de savoir si les propos tenus dans le texte qui est recopié sont également soumis au rejet et ce qu'il faut faire si le texte republié contient des propos non conformes à la charte.</p>
+            
+            <h3>2.35 Religion</h3>
+            <p>On effectuera une différence en fonction de si l'utilisateur s'attaque à la religion en elle-même ou bien à ses adeptes.</p>
+            
+            <h3>2.36 Dépêches AFP</h3>
+            <p>Toutes les copies partielles ou totales de dépêches identifiées comme appartenant à l'AFP sont à rejeter.</p>
+            
+            <h3>2.37 Modération des images</h3>
+            <p>On rejettera les contenus présentant :</p>
+            <ul>
+                <li>De l'érotisme et de la pornographie</li>
+                <li>Des symboles néo-nazis</li>
+                <li>Des représentations de substances stupéfiantes illégales</li>
+                <li>Les images sanglantes/gore qui sont réalistes</li>
+                <li>Les images enfreignant un des chapitres de la charte</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2><span class="section-number">3</span> Signalement des commentaires à risque juridique</h2>
+            <p>Certains utilisateurs pourraient manifester dans les espaces de commentaires leur intention de déposer une plainte auprès de la police ou de la justice en raison de commentaires qu'ils jugeraient offensants ou illégaux.</p>
+            <p>Tout message signalant une intention de déposer une plainte doit être signalée par email à l'équipe de chargés clientèle via l'adresse centrefrance@netino.com.</p>
+        </div>
+        
+        <div class="card">
+            <h2><span class="section-number">4</span> Mise en application de la charte</h2>
+            <p>Les modérateurs ne doivent pas faire de jugements « éditoriaux ». L'objet de la mission des modérateurs est défini comme suit par les parties : Accepter ou rejeter les messages en se basant uniquement sur les consignes stipulées dans la présente charte de modération.</p>
+            <p>La réussite de la mission se juge donc en ce que les verdicts des modérateurs se rapprochent le plus possible des consignes données dans cette charte de modération.</p>
+            <p>Cette version de la charte prend effet à compter de la date d'envoi en email et remplace à compter de cette date toute autre charte précédente. Elle restera valable jusqu'à ce qu'une nouvelle version de la charte soit envoyée.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Copyright © 2022 Tous droits réservés</p>
+                    </div>
+    </footer>
+</body>
+</html>
